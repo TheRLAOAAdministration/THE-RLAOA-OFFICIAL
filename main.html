@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The RLAOA Administration</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="RLAOA-logo.png">
+
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="The Roblox Law and Order Administration (RLAOA) is dedicated to maintaining a safe and enjoyable environment for all Roblox players. Join us in our mission to stop rule breakers on Roblox.">
+    <meta name="keywords" content="RLAOA, Roblox Law and Order Administration, Roblox, online safety, gaming, community, rule enforcement">
+    <meta name="author" content="RLAOA Administration">
+    
+    <!-- Open Graph Meta Tags (for social media sharing) -->
+    <meta property="og:title" content="The RLAOA Administration">
+    <meta property="og:description" content="Join the RLAOA in our mission to ensure a safe and fair Roblox gaming environment by enforcing rules and taking action against violators.">
+    <meta property="og:url" content="https://yourwebsite.com">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://yourwebsite.com/image.jpg">
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fafafa;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .top-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #000;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; /* Added to space out elements */
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            box-sizing: border-box;
+            border-bottom: 3px solid #fff; /* Added border */
+        }
+
+        .top-bar .menu-btn {
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin-right: 20px;
+            position: relative;
+            z-index: 1010; /* Ensure it is above other elements */
+        }
+
+        .top-bar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #e74c3c;
+            margin-left: 10px; /* Margin for better alignment */
+        }
+
+        .top-bar .links {
+            margin-left: auto; /* Push the links to the right */
+        }
+
+        .top-bar .links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .top-bar .links a:hover {
+            color: #e74c3c;
+        }
+
+        .menu-content {
+            display: none;
+            position: absolute;
+            top: 60px; /* Position under the hamburger button */
+            left: 0;
+            background: #333;
+            color: #fff;
+            padding: 10px;
+            width: 200px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000; /* Ensure it is above other elements */
+        }
+
+        .menu-content a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu-content a:hover {
+            background-color: #e74c3c;
+        }
+
+        .menu-btn.active + .menu-content {
+            display: block;
+        }
+
+        header {
+            background: url('homeimage.png') no-repeat center center;
+            background-size: cover;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            margin-top: 60px;
+            text-align: center;
+        }
+
+        header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.6) 80%);
+            z-index: 1;
+        }
+
+        .header-content {
+            position: relative;
+            color: #fff;
+            z-index: 2;
+        }
+
+        .header-content h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            font-weight: 700;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+        }
+
+        .logo-image {
+            max-width: 60%;
+            height: auto;
+            margin-top: 20px;
+        }
+
+        .section {
+            padding: 80px 20px;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .section-light {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #e74c3c;
+        }
+
+        p {
+            line-height: 1.8;
+            font-size: 1.2rem;
+        }
+
+        #how-to-join {
+            padding: 60px 20px;
+            background-color: #333;
+        }
+
+        #how-to-join h2 {
+            color: #e74c3c; /* Ensure the heading is visible */
+        }
+
+        #how-to-join .instructions {
+            color: #fff; /* Ensure text is visible against background */
+        }
+
+        #social-medias {
+            padding: 60px 20px;
+            background-color: #000;
+            color: #fff;
+        }
+
+        #social-medias ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        #social-medias li {
+            margin: 0 20px;
+        }
+
+        #social-medias a {
+            text-decoration: none;
+            color: #e74c3c;
+            font-weight: bold;
+            font-size: 1.7rem;
+            transition: color 0.3s ease;
+        }
+
+        #social-medias a:hover {
+            color: #fff;
+        }
+
+        footer {
+            background-color: #000;
+            padding: 15px 20px;
+            color: #fff;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        .discord-link {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1.1rem;
+            color: #fff;
+            background-color: #7289da;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .discord-link:hover {
+            background-color: #5b6eae;
+        }
+
+        .instructions {
+            font-size: 1.2rem;
+            list-style: none;
+            padding: 0;
+            text-align: center;
+            margin: 0 auto;
+            max-width: 600px;
+            color: #fff; /* Ensure the text is visible */
+        }
+
+        .instructions li {
+            margin-bottom: 15px;
+        }
+
+        .video-section {
+            padding: 60px 20px;
+            background-color: #333;
+        }
+
+        .video-section iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            margin: 20px 0;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+        <div class="logo">
+            The Roblox Law And Order Administration
+        </div>
+        <div class="links">
+            <a href="https://discord.gg/3EcMXTTyGW" target="_blank" class="discord-link">Join Our Discord</a>
+            <a href="https://www.roblox.com/games/18438022061/RLAOA-Headquarters" target="_blank">Headquarters</a>
+        </div>
+        <div class="menu-content" id="menu-content">
+            <a href="https://therlaoaadministration.github.io/The-RLAOA-Administration/Command%20Structure.html" target="_blank">Command Structure of the RLAOA</a>
+            <a href="https://therlaoaadministration.github.io/The-RLAOA-Administration/Roblox%20Law%20Book.html" target="_blank">Roblox Law Book</a>
+        </div>
+    </div>
+
+    <header>
+        <div class="header-content">
+            <h1>The RLAOA Administration</h1>
+            <img src="RLAOA-logo.png" alt="RLAOA Logo" class="logo-image">
+        </div>
+    </header>
+
+    <section id="our-mission" class="section">
+        <div class="container">
+            <h2>The Roblox Law And Order Administration</h2>
+            <p>The Roblox Law and Order Administration (RLAOA) is a dedicated organization focused on enforcing Roblox's community standards and ensuring a safe gaming environment. With divisions such as the Field Operations Division and the Search Team, the RLAOA employs a structured approach to monitor, investigate, and address rule violations and predatory behavior. Members undergo rigorous training and participate in missions to uphold the integrity of the platform, working together to maintain a respectful and secure community for all Roblox users.</p>
+        </div>
+    </section>
+
+    <section id="our-videos" class="video-section">
+        <div class="container">
+            <h2>Recruitment Advertisements</h2>
+            <iframe src="https://www.youtube.com/embed/RuCT7HPaQL8" allowfullscreen></iframe>
+            <iframe src="https://www.youtube.com/embed/nt3YT804vJk" allowfullscreen></iframe>
+        </div>
+    </section>
+
+    <section id="how-to-join" class="section section-light">
+        <div class="container">
+            <h2>How to Join</h2>
+            <ul class="instructions">
+                <li>Join the Discord Server</li>
+                <li>Verify in <#verification┃✅></li>
+                <li>Request agent account in <#account-request┃🙋></li>
+                <li>Wait for an available RET in <#recruits-shout┃📢></li>
+                <li>Pass the RET and become an RLAOA AGENT</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="social-medias" class="section-light">
+        <div class="container">
+            <p>Stay updated with our latest news and events:</p>
+            <ul>
+                <li><a href="https://www.youtube.com/@TheRLAOAAdministration/featured" target="_blank">YouTube</a></li>
+                <li><a href="https://www.tiktok.com/@therlaoadministration" target="_blank">TikTok</a></li>
+                <li><a href="https://www.facebook.com/profile.php?id=61562866895868" target="_blank">Facebook</a></li>
+                <li><a href="https://discord.gg/3EcMXTTyGW" target="_blank">Discord</a></li>
+            </ul>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 RLAOA - Roblox Law and Order Administration. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menuContent = document.getElementById('menu-content');
+            menuContent.classList.toggle('active');
+            if (menuContent.style.display === "block") {
+                menuContent.style.display = "none";
+            } else {
+                menuContent.style.display = "block";
+            }
+        }
+    </script>
+</body>
+</html>

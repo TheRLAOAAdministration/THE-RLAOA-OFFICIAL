@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RLAOA Command Structure</title>
+	
+		    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="RLAOA-logo.png">
+
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="The Roblox Law and Order Administration (RLAOA) Command Structure page provides an overview of the leadership and organization within the RLAOA.">
+    <meta name="keywords" content="RLAOA, Roblox, command structure, leadership, gaming, community">
+    <meta name="author" content="RLAOA Administration">
+
+    <!-- Google Fonts -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap">
+
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fafafa;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .top-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: #000;
+            color: #fff;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            z-index: 1000;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        .top-bar .menu-btn {
+            font-size: 1.5rem;
+            cursor: pointer;
+            margin-right: 20px;
+        }
+
+        .top-bar .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+
+        .top-bar .links {
+            margin-left: auto;
+        }
+
+        .top-bar .links a {
+            color: #fff;
+            text-decoration: none;
+            margin: 0 10px;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .top-bar .links a:hover {
+            color: #e74c3c;
+        }
+
+        .menu-content {
+            display: none;
+            position: absolute;
+            top: 60px; 
+            left: 0;
+            background: #333;
+            color: #fff;
+            padding: 10px;
+            width: 200px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+            z-index: 1000; 
+        }
+
+        .menu-content a {
+            display: block;
+            color: #fff;
+            text-decoration: none;
+            padding: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu-content a:hover {
+            background-color: #e74c3c;
+        }
+
+        .menu-btn.active + .menu-content {
+            display: block;
+        }
+
+        .section {
+            padding: 60px 20px;
+            background-color: #000;
+            color: #fff;
+        }
+
+        .section-light {
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        h2 {
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #e74c3c;
+        }
+
+        .profile {
+            display: flex;
+            flex-direction: column; /* Stack images and names vertically */
+            align-items: center;
+            margin-bottom: 30px; /* Increased margin for better spacing */
+            font-size: 1.5rem; /* Increased font size */
+        }
+
+        .profile img {
+            border-radius: 50%;
+            width: 100px; /* Set to a larger size */
+            height: 100px; /* Set to a larger size */
+            margin-bottom: 10px; /* Space between image and name */
+        }
+
+        .roblox-link {
+            font-size: 1rem; /* Smaller font size for the link */
+            color: #e74c3c; /* Match link color */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .roblox-link:hover {
+            color: #fff; /* Change color on hover */
+        }
+
+        footer {
+            background-color: #000;
+            padding: 15px 20px;
+            color: #fff;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #e74c3c;
+            text-decoration: none;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="menu-btn" onclick="toggleMenu()">☰</div>
+        <div class="logo">RLAOA Command Structure</div>
+        <div class="links">
+            <a href="https://discord.gg/3EcMXTTyGW" target="_blank">Join Our Discord</a>
+            <a href="https://www.roblox.com/games/18438022061/RLAOA-Headquarters" target="_blank">Headquarters</a>
+        </div>
+        <div class="menu-content" id="menu-content">
+            <a href="https://www.therlaoa.com" target="_blank">The RLAOA</a>
+            <a href="https://www.roblox.com/games/18438022061/RLAOA-Law-Book" target="_blank">Roblox Law Book</a>
+        </div>
+    </div>
+
+    <section id="supreme-commanders" class="section">
+        <div class="container">
+            <h2>Supreme Commanders Of The RLAOA</h2>
+            <div class="profile">
+                <img src="1.png" alt="PlayerM125">
+                <div> [SCR] PlayerM125</div>
+                <a href="https://www.roblox.com/users/3502148430/profile" class="roblox-link" target="_blank">Roblox Profile</a>
+            </div>
+            <div class="profile">
+                <img src="2.png" alt="goosebumpsfan360">
+                <div> [SCR] goosebumpsfan360</div>
+                <a href="https://www.roblox.com/users/844617745/profile" class="roblox-link" target="_blank">Roblox Profile</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="hicom" class="section-light">
+        <div class="container">
+            <h2>HICOM</h2>
+            <div class="profile">
+                <img src="3.png" alt="speedy9000">
+                <div>[COL] Colonel, speedy9000</div>
+                <a href="https://www.roblox.com/users/4614254116/profile" class="roblox-link" target="_blank">Roblox Profile</a>
+            </div>
+            <div class="profile">
+                <img src="4.png" alt="princetrimor">
+                <div>[COL] Colonel, princetrimor</div>
+                <a href="https://www.roblox.com/users/4024626892/profile" class="roblox-link" target="_blank">Roblox Profile</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="officers" class="section">
+        <div class="container">
+            <h2>Officers</h2>
+            <div class="profile">
+                <img src="jah.png" alt="jahii823417">
+                <div>[FLT] First Lieutenant, jahii823417</div>
+                <a href="https://www.roblox.com/users/635967277/profile" class="roblox-link" target="_blank">Roblox Profile</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 RLAOA - Roblox Law and Order Administration. All rights reserved.</p>
+        <div>
+            <a href="https://www.youtube.com/@TheRLAOAAdministration" target="_blank">YouTube</a>
+            <a href="https://www.tiktok.com/@therlaoadministration" target="_blank">TikTok</a>
+            <a href="https://discord.gg/3EcMXTTyGW" target="_blank">Discord</a>
+            <a href="https://www.facebook.com/profile.php?id=61562866895868" target="_blank">Facebook</a>
+        </div>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            const menuContent = document.getElementById('menu-content');
+            menuContent.style.display = menuContent.style.display === "block" ? "none" : "block";
+        }
+    </script>
+</body>
+</html>
